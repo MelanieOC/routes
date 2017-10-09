@@ -7,7 +7,9 @@ import Courses from './Courses';
 import {
   BrowserRouter,
   Route,
-  NavLink
+  NavLink,
+  Switch,
+  Redirect
 } from 'react-router-dom'
 
 
@@ -25,10 +27,14 @@ class App extends Component {
               <li><NavLink to="/courses">Courses</NavLink></li>
             </ul>
           </header>
+          <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/teachers" component={Teachers} />
             <Route path="/courses" component={Courses} />
+
+            <Route render={() => <Redirect to="/courses/html" />} />
+          </Switch>
         </div>
       </BrowserRouter>
     );
