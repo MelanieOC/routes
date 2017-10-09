@@ -7,15 +7,9 @@ import Courses from './Courses';
 import {
   BrowserRouter,
   Route,
-  Switch,
   NavLink
 } from 'react-router-dom'
 
-const NotFoundPage = (props) => {
-  return (
-    <div> <h2> Error 404! </h2> </div>
-  );
-}
 
 class App extends Component {
   render() {
@@ -31,14 +25,10 @@ class App extends Component {
               <li><NavLink to="/courses">Courses</NavLink></li>
             </ul>
           </header>
-          <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/teachers" component={Teachers} />
             <Route path="/courses" component={Courses} />
-
-            <Route component={NotFoundPage} />
-          </Switch>
         </div>
       </BrowserRouter>
     );
