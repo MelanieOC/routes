@@ -33,7 +33,7 @@ class App extends Component {
             <Route path="/teachers" component={Teachers} />
             <Route path="/courses" component={Courses} />
 
-            <Route render={() => <Redirect to="/courses/html" />} />
+            <Route render={() => <Redirect to="/" />} />
           </Switch>
         </div>
       </BrowserRouter>
